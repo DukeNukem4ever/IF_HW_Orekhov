@@ -105,61 +105,58 @@ class Toyota extends CarEx {
                 avg_speed,
                 country);
         this.model = "Toyota";
-        //this.year = 2007;
-        //this.transmission = "Handy";
-        //this.color = "Green";
-        //this.avg_speed = 75;
         this.country = "Japan";
     }
 }
 
 class Suzuki extends CarEx {
-    public Suzuki() {
-        super("Suzuki",
-                2009,
-                "Auto",
-                "Cyan",
-                100,
-                "Japan");
-
-    }
-    static public void main(String[] args) {
-        System.out.println(Toyota.class);
+    public Suzuki(String model, int year, String transmission, String color, int avg_speed, String country) {
+        super(model,
+                year,
+                transmission,
+                color,
+                avg_speed,
+                country);
+        this.model = "Suzuki";
+        this.country = "Japan";
     }
 }
 
 class Volga extends Car {
-    public Volga() {
-        super("Volga",
-                1996,
-                "Handy",
-                "Black",
-                90,
-                "Russia");
-
+    public Volga(String model, int year, String transmission, String color, int avg_speed, String country) {
+        super(model,
+                year,
+                transmission,
+                color,
+                avg_speed,
+                country);
+        this.model = "Volga";
+        this.country = "Russia";
     }
 }
 
 class Ferrari extends Car {
-    public Ferrari() {
-        super("Ferrari",
-                2007,
-                "Auto",
-                "Red",
-                250,
-                "Italy");
-
+    public Ferrari(String model, int year, String transmission, String color, int avg_speed, String country) {
+        super(model,
+                year,
+                transmission,
+                color,
+                avg_speed,
+                country);
+        this.model = "Ferrari";
+        this.country = "Italy";
     }
 }
 
 class Cadillac extends Car {
-    public Cadillac() {
-        super("Cadillac",
-                1965,
-                "Handy",
-                "White",
-                80,
-                "USA");
-
+    public Cadillac(String model, int year, String transmission, String color, int avg_speed, String country) {
+        super(model,
+                year,
+                transmission,
+                color,
+                avg_speed,
+                country);
+        this.model = "Cadillac";
+        this.country = "USA";
     }
 }
