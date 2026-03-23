@@ -10,12 +10,17 @@ public class Main {
         toyota.checkDistance(6);
 
         // Смена цвета Тойоты.
-        toyota.getColor();
+        System.out.println(toyota.getColor());
         toyota.setColor("Blue");
-        toyota.getColor();
+        System.out.println(toyota.getColor());
 
         // Проверка общего расстояния, которое проедет Toyota
         toyota.checkDistance(5);
+
+        Volga volga = new Volga("Volga",1990,"Handy","Blue",100, "Russia");
+        System.out.println(volga.getTransmission());
+        System.out.println(volga.getAvgSpeed());
+        System.out.println(volga.getModel());
 
         // Составление списка для автомобилей:
         List<Car> cars = new ArrayList<>();
