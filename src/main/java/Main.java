@@ -6,8 +6,8 @@ public class Main {
     public static void main(String[] args) {
         Toyota toyota = new Toyota("Toyota",2007,"Handy","Green",123, "Japan");
 
-        // Проверка дистанции Тойоты за 6 часов.
-        toyota.checkDistance(6);
+        // Проверка дистанции Тойоты за 7 часов.
+        toyota.checkDistance(7);
 
         // Смена цвета Тойоты.
         System.out.println(toyota.getColor());
