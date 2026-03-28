@@ -59,9 +59,10 @@ public class Main {
         System.out.println(car_3.getName() + " (средняя скорость - " + car_3.getAvgSpeed() + ")");
         System.out.println("=========================");
 
-        // Машина 4 - изменим её название
+        // Машина 4 - проверяем страну, где она была произведена, а затем изменим её название
         System.out.println(" ");
         System.out.println("=========================");
+        System.out.println("Откуда машина: " + car_4.getCountry());
         System.out.println("Имя машины: " + car_4.getName());
         car_4.changeName("Toyota Super");
         System.out.println("Имя машины: " + car_4.getName());
