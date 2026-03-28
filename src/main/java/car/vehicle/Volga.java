@@ -6,7 +6,7 @@ public class Volga extends Car {
 
     public Volga(String name, String model, int price, int year, String transmission, String color, int avg_speed, String country) {
         super(name,
-                model,
+                "Volga",
                 price,
                 year,
                 transmission,
