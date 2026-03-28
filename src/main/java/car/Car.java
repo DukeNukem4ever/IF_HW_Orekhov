@@ -13,12 +13,12 @@ public abstract class Car {
     // Конструктор
     public Car(String name,
                String model,
-        int price,
-        int year,
-        String transmission,
-        String color,
-        int avg_speed,
-        String country) {
+               int price,
+               int year,
+               String transmission,
+               String color,
+               int avg_speed,
+               String country) {
         this.name = name;
         this.model = model;
         this.price = price;
@@ -30,25 +30,41 @@ public abstract class Car {
     }
 
     // Информация о машине
-    public String getName() { return name; }
-    public String getModel() { return model; }
-    public int getPrice() { return price; }
+    public String getName() {
+        return name;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
     public int getYear() {
         return year;
     }
+
     public String getTransmission() {
         return transmission;
     }
+
     public String getColor() {
         return color;
     }
+
     public int getAvgSpeed() {
         return avg_speed;
     }
+
     public String getCountry() {
         return country;
     }
-    public String toString() {return name + " (" + model + "; " + color + "; " + year + ") - " + price + " $";}
+
+    public String toString() {
+        return name + " (" + model + "; " + color + "; " + year + ") - " + price + " $";
+    }
 
     public void carInfo() {
         System.out.println("Название: " + model);
@@ -76,22 +92,4 @@ public abstract class Car {
         System.out.println("Средняя скорость теперь составляет " + avg_speed);
     }
 
-    //public void checkDistance(int time) {
-    //    int timed_speed = time * this.getAvgSpeed();
-    //    System.out.println("Сколько машина проедет за " + time + " часов: " + timed_speed);
-    //    }
 }
-    //public void checkDistance(int time) {
-    //        int timed_speed = time * this.avg_speed;
-    //        System.out.println("Сколько машина проедет за " + time + " часов: " + timed_speed);
-    //}
-
-    //void darkenColor() {
-    //    if (!Objects.equals(this.color, "Black")) {
-    //        this.color = "Dark " + this.color.toLowerCase();
-    //        System.out.println("Цвет изменён!");
-    //    }
-    //    else {
-    //        System.out.println("Темнее некуда!");
-    //    }
-    //}

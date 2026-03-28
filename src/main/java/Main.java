@@ -35,16 +35,18 @@ public class Main {
         Car car_3 = cars.get(2);
         Car car_4 = cars.get(3);
 
-        // Машина 1 - красим её в серебристый цвет.
+        // Машина 1 - проверяем название модели и красим её в серебристый цвет.
         System.out.println("=========================");
+        System.out.println("Модель машины: " + car_1.getModel());
         System.out.println(car_1.getName() + " (цвет - " + car_1.getColor() + ")");
         car_1.setColor("Silver");
         System.out.println(car_1.getName() + " (цвет - " + car_1.getColor() + ")");
         System.out.println("=========================");
         System.out.println(" ");
 
-        // Машина 2 - делаем её цвет потемнее.
+        // Машина 2 - проверяем передачу и делаем цвет потемнее.
         System.out.println("=========================");
+        System.out.println("Передача машины: " + car_2.getTransmission());
         System.out.println(car_2.getName() + " (цвет - " + car_2.getColor() + ")");
         new darkenColor(car_2);
         System.out.println("=========================");
