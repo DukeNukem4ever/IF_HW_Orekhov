@@ -1,124 +1,114 @@
+import car.Car;
+import car.vehicle.Toyota;
+import car.vehicle.Volga;
+import car.vehicle.Ferrari;
+import car.vehicle.Suzuki;
+import car.vehicle.Cadillac;
+import car.methodscars.set.carStats;
+import car.methodscars.set.darkenColor;
+import car.methodscars.set.greenToRed;
+import car.methodscars.check.checkDistance;
+import car.methodscars.check.checkDiscount;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
     //it's Main origin
+
     public static void main(String[] args) {
-        Toyota toyota = new Toyota("Toyota",2007,"Handy","Green",123, "Japan");
-
-        // Проверка дистанции Тойоты за 7 часов.
-        toyota.checkDistance(7);
-
-        // Смена цвета Тойоты.
-        System.out.println(toyota.getColor());
-        toyota.setColor("Blue");
-        System.out.println(toyota.getColor());
-
-        // Проверка общего расстояния, которое проедет Toyota
-        toyota.checkDistance(5);
-
-        Volga volga = new Volga("Volga",1990,"Handy","Blue",100, "Russia");
-        System.out.println(volga.getTransmission());
-        System.out.println(volga.getAvgSpeed());
-        System.out.println(volga.getModel());
 
         // Составление списка для автомобилей:
         List<Car> cars = new ArrayList<>();
-        Car volkswagen = new CarEx(
-                "Volkswagen",
-                2005,
-                "Handy",
-                "Yellow",
-                100,
-                "Germany");
-        Car renault = new CarEx(
-                "Renault",
-                2008,
-                "Auto",
-                "Black",
-                125,
-                "France");
-        Car porsche = new CarEx(
-                "Porsche",
-                2016,
-                "Auto",
-                "Silver",
-                115,
-                "Germany");
-        Car holden = new CarEx(
-                "Holden",
-                2004,
-                "Handy",
-                "Blue",
-                130,
-                "Australia");
-        Car hyundai = new CarEx(
-                "Hyundai",
-                2024,
-                "Auto",
-                "Purple",
-                120,
-                "South Korea");
-        Car chevrolet = new CarEx(
-                "Chevrolet",
-                2017,
-                "Auto",
-                "Pink",
-                109,
-                "USA"
-        );
-        Car dodge = new CarEx(
-                "Dodge",
-                2014,
-                "Auto",
-                "Red",
-                125,
-                "USA"
-        );
-        Car ford = new CarEx(
-                "Ford",
-                2010,
-                "Handy",
-                "White",
-                95,
-                "USA"
-        );
-        Car nissan = new CarEx(
-                "Nissan",
-                2021,
-                "Auto",
-                "Green",
-                100,
-                "Japan"
-        );
-        Car mercedes = new CarEx(
-                "Mercedes",
-                2019,
-                "Auto",
-                "Orange",
-                98,
-                "Germany"
-        );
+        cars.add(new Volga("Volga ZX-2", null, 243000, 2019, "Auto", "Red", 130, null));
+        cars.add(new Volga("Volga Oldschool", null,75000, 1995, "Handy", "Black", 90, null));
+        cars.add(new Toyota("Toyota Legacy",null, 143020,2002, "Handy", "Green", 100, null));
+        cars.add(new Toyota("Toyota Slayer", null,405010, 2025, "Auto", "Yellow", 150, null));
+        cars.add(new Suzuki("Suzuki Samurai", null, 750594,2022, "Auto", "White", 200, null));
+        cars.add(new Suzuki("Suzuki Vintage", null,135043,1997, "Handy", "Cyan", 125, null));
+        cars.add(new Ferrari("Ferrari Starline", null, 2845330,2026, "Auto", "Orange", 300, null));
+        cars.add(new Ferrari("Ferrari Retro",null,120403,2000, "Handy", "Gray", 200, null));
+        cars.add(new Cadillac("Cadillac Classic",null, 493059, 1986,"Handy", "Brown", 150, null));
+        cars.add(new Cadillac("Cadillac Neo",null,1023045,2019, "Auto", "Blue", 300, null));
 
-        cars.add(volkswagen);
-        cars.add(renault);
-        cars.add(porsche);
-        cars.add(holden);
-        cars.add(hyundai);
-        cars.add(chevrolet);
-        cars.add(dodge);
-        cars.add(ford);
-        cars.add(nissan);
-        cars.add(mercedes);
+        Car car_1 = cars.getFirst();
+        Car car_2 = cars.get(1);
+        Car car_3 = cars.get(2);
+        Car car_4 = cars.get(3);
 
-        // Тестирование статических методов
-        System.out.println("Цвет Мерседеса: " + mercedes.getColor());
-        mercedes.darkenColor();
-        System.out.println("Цвет Мерседеса: " + mercedes.getColor());
-        mercedes.greenToRed();
-        System.out.println("Статистика Порше: " + mercedes.getColor());
-        mercedes.darkenColor();
-    }
+        // Машина 1 - красим её в серебристый цвет.
+        System.out.println("=========================");
+        System.out.println(car_1.getName() + " (цвет - " + car_1.getColor() + ")");
+        car_1.setColor("Silver");
+        System.out.println(car_1.getName() + " (цвет - " + car_1.getColor() + ")");
+        System.out.println("=========================");
+        System.out.println(" ");
+
+        // Машина 2 - делаем её цвет потемнее.
+        System.out.println("=========================");
+        System.out.println(car_2.getName() + " (цвет - " + car_2.getColor() + ")");
+        new darkenColor(car_2);
+        System.out.println("=========================");
+
+        // Машина 3 - меняем её среднюю скорость
+        System.out.println(" ");
+        System.out.println("=========================");
+        System.out.println(car_3.getName() + " (средняя скорость - " + car_3.getAvgSpeed() + ")");
+        car_3.setAvgSpeed(150);
+        System.out.println(car_3.getName() + " (средняя скорость - " + car_3.getAvgSpeed() + ")");
+        System.out.println("=========================");
+
+        // Машина 4 - изменим её название
+        System.out.println(" ");
+        System.out.println("=========================");
+        System.out.println("Имя машины: " + car_4.getName());
+        car_4.changeName("Toyota Super");
+        System.out.println("Имя машины: " + car_4.getName());
+        System.out.println("=========================");
+
+        // Массовая перекраска зелёных автомобилей в красный цвет
+        System.out.println(" ");
+        System.out.println("=========================");
+        for (Car car: cars) {
+            System.out.println(car.getName() + " (цвет - " + car.getColor() + ")");
+            new greenToRed(car);
+            System.out.println(" ");
+            }
+        System.out.println("=========================");
+
+        // Расстояние, которое все машины проедут за 5 часов:
+        System.out.println(" ");
+        System.out.println("=========================");
+        for (Car car: cars) {
+            new checkDistance(car, 5);
+            System.out.println(" ");
+        }
+        System.out.println("=========================");
+
+        // Статистика по машинам после 2006 года:
+        System.out.println(" ");
+        System.out.println("=========================");
+        new carStats(cars);
+        System.out.println("=========================");
+
+        // Проверка цен машин по скидке 25%:
+        System.out.println(" ");
+        System.out.println("=========================");
+        for (Car car : cars){
+            new checkDiscount(car, 25);
+            System.out.println(" ");
+        }
+        System.out.println("=========================");
+
+        // Затемнение цвета машин:
+        System.out.println(" ");
+        System.out.println("=========================");
+        for (Car car : cars){
+            System.out.println("Цвет машины " + car.getName() + ": " + car.getColor());
+            new darkenColor(car);
+            System.out.println(" ");
+        }
+        System.out.println("=========================");
 }
+    }
 
 
