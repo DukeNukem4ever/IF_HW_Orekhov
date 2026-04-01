@@ -2,8 +2,6 @@ package PageTests;
 
 import org.openqa.selenium.*;
 
-import java.time.Duration;
-
 public class DashboardPage {
 
     WebDriver driver;
