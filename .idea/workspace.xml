@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ee681d35-bd51-4d1b-9225-92950c7a175f" name="Changes" comment="init commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageTests/DashboardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageTests/DashboardPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/PageTests/DefectPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageTests/DefectPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageTests/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageTests/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PageTests/IssuePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageTests/IssuePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PageTests/ProjectPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageTests/ProjectPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/ExampleTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ExampleTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +69,7 @@
     "Application.Main.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.ExampleTests.executor": "Run",
+    "JUnit.ExampleTests.testDefectFields.executor": "Run",
     "JUnit.ExampleTests.testIssueCounter.executor": "Debug",
     "JUnit.ExampleTests.testLogin.executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
@@ -83,6 +85,10 @@
     "git-widget-placeholder": "IF__HW3",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "C:/Users/artem/IdeaProjects/IF_HW_Orekhov/src/test/java",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "onboarding.tips.debug.path": "C:/Users/artem/IdeaProjects/IF_HW_Orekhov/src/main/java/org/example/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
@@ -91,7 +97,23 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.ExampleTests.testDefectFields">
+    <configuration name="ExampleTests.testDefectFields" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IF_HW_Orekhov" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.ExampleTests" />
+      <option name="METHOD_NAME" value="testDefectFields" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ExampleTests.testIssueCounter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IF_HW_Orekhov" />
       <extension name="coverage">
@@ -110,6 +132,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ExampleTests.testDefectFields" />
         <item itemvalue="JUnit.ExampleTests.testIssueCounter" />
       </list>
     </recent_temporary>

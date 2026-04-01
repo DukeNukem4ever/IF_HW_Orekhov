@@ -9,7 +9,7 @@ public class IssuePage {
     WebDriver driver;
 
     By status = By.xpath("//span[contains(text(),'Сделать')]");
-    By fixVersion = By.xpath("//span[contains(text(),'Version 2.0')]");
+    By fixVersion = By.xpath("//a[@title='Version 2.0 ']");
     By searcher = By.xpath("//input[@id='quickSearchInput']");
 
     public IssuePage(WebDriver driver) {
