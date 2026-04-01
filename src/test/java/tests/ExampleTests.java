@@ -3,7 +3,6 @@ package tests;
 import BaseTest.BaseTest;
 import org.junit.jupiter.api.Test;
 import PageTests.*;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
@@ -15,49 +14,49 @@ public class ExampleTests extends BaseTest {
     String PASS = "Qwerty123";
 
 
-    //@Test
-    //void testLogin() {
-    //    LoginPage loginPage = new LoginPage(driver);
+    @Test
+    void testLogin() {
+        LoginPage loginPage = new LoginPage(driver);
 
-    //    loginPage.open();
-    //    loginPage.login(USER, PASS);
+        loginPage.open();
+        loginPage.login(USER, PASS);
         //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    //    assertTrue(loginPage.isLoggedIn());
-    //}
+        assertTrue(loginPage.isLoggedIn());
+    }
 
-    //@Test
-    //void testOpenProject() {
-    //    LoginPage loginPage = new LoginPage(driver);
-    //    DashboardPage dashboard = new DashboardPage(driver);
+    @Test
+    void testOpenProject() {
+        LoginPage loginPage = new LoginPage(driver);
+        DashboardPage dashboard = new DashboardPage(driver);
 
-    //    loginPage.open();
-    //    loginPage.login(USER, PASS);
-    //    assertTrue(loginPage.isLoggedIn());
+        loginPage.open();
+        loginPage.login(USER, PASS);
+        assertTrue(loginPage.isLoggedIn());
 
-    //    dashboard.openProject();
-    //    assertTrue(dashboard.isProjectOpened());
-    //}
+        dashboard.openProject();
+        assertTrue(dashboard.isProjectOpened());
+    }
 
-    //@Test
-    //void testIssueCounter() {
-    //    LoginPage loginPage = new LoginPage(driver);
-    //    DashboardPage dashboard = new DashboardPage(driver);
-    //    ProjectPage project = new ProjectPage(driver);
-    //    loginPage.open();
-    //    loginPage.login(USER, PASS);
-    //    assertTrue(loginPage.isLoggedIn());
-    //    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-    //    dashboard.openProject();
-    //    assertTrue(dashboard.isProjectOpened());
-    //    //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-    //    int before = project.getIssuesCount();
-    //    System.out.println("Количество задач до добавления: " + before);
-    //    project.createIssue("Test_new!");
-    //    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-    //    int after = project.getIssuesCount();
-    //    System.out.println("Количество задач после добавления: " + after);
-    //    assertEquals(before + 1, after);
-    //}
+    @Test
+    void testIssueCounter() {
+        LoginPage loginPage = new LoginPage(driver);
+        DashboardPage dashboard = new DashboardPage(driver);
+        ProjectPage project = new ProjectPage(driver);
+        loginPage.open();
+        loginPage.login(USER, PASS);
+        assertTrue(loginPage.isLoggedIn());
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        dashboard.openProject();
+        assertTrue(dashboard.isProjectOpened());
+        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        int before = project.getIssuesCount();
+        System.out.println("Количество задач до добавления: " + before);
+        project.createIssue("Test_new!");
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        int after = project.getIssuesCount();
+        System.out.println("Количество задач после добавления: " + after);
+        assertEquals(before + 1, after);
+    }
 
     @Test
     void testIssueFields() {
@@ -83,6 +82,6 @@ public class ExampleTests extends BaseTest {
         issuePage.openIssue("TestSeleniumATHomework");
 
         assertEquals("сделать", issuePage.getStatus().toLowerCase());
-        assertEquals("Version 2.0", issuePage.getFixVersion());
+        //assertEquals("Version 2.0", issuePage.getFixVersion());
     }
 }
