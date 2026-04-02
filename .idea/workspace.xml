@@ -7,7 +7,6 @@
     <list default="true" id="ee681d35-bd51-4d1b-9225-92950c7a175f" name="Changes" comment="init commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/PageTests/DefectPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageTests/DefectPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageTests/IssuePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageTests/IssuePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/PageTests/ProjectPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageTests/ProjectPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/ExampleTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ExampleTests.java" afterDir="false" />
     </list>

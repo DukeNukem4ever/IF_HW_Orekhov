@@ -26,9 +26,11 @@ public class ProjectPage {
     public void createIssue(String name) {
         driver.findElement(createButton).click();
         driver.findElement(summary).sendKeys(name);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
         driver.findElement(createSubmit).click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
         driver.navigate().refresh();
+        driver.navigate().refresh();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
     }
 }

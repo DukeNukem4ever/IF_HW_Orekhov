@@ -13,13 +13,10 @@ import java.util.List;
 public class DefectPage {
     WebDriver driver;
 
-    By issuesCount = By.xpath("//div[@class='showing']");
     By createButton = By.xpath("//a[@id='create_link']");
     By summary = By.xpath("//input[@id=\"summary\"]");
-    By descript = By.xpath("//textarea[@id=\"description\"]");
     By desc_buttons = By.xpath("//li[@data-mode='wysiwyg']");
     By labels = new ByChained(By.id("labels-multi-select"), By.id("labels-textarea"));
-    By environment = By.xpath("//textarea[@id='environment']");
     By priority = new ByChained(By.xpath("//input[@id='priority-field']"));
     By createSubmit = By.xpath("//input[@id='create-issue-submit']");
 
@@ -29,11 +26,11 @@ public class DefectPage {
         this.driver = driver;
     }
 
-    public int getIssuesCount() {
-        String text = driver.findElement(issuesCount).getText();
-        String total = text.split("из")[1].trim();
-        return Integer.parseInt(total);
-    }
+    //public int getIssuesCount() {
+    //    String text = driver.findElement(issuesCount).getText();
+    //    String total = text.split("из")[1].trim();
+    //    return Integer.parseInt(total);
+    //}
 
     public void createDefect(String name,
                             String description,
@@ -46,8 +43,18 @@ public class DefectPage {
         System.out.println("Тест 1");
         driver.findElement(summary).sendKeys(name); // Тема
         System.out.println("Тест 2");
-        driver.findElement(descript).sendKeys(description); // Описание
-        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+        By descript = By.xpath("//div[@field-id='description']//iframe");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(300));
+
+        WebElement iframe = wait.until(ExpectedConditions.presenceOfElementLocated(descript));
+        driver.switchTo().frame(iframe);
+
+        WebElement body = wait.until(ExpectedConditions.presenceOfElementLocated(By.tagName("body")));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].innerHTML = arguments[1];", body, description);
+
+        driver.switchTo().defaultContent();
+
         System.out.println("Тест 3");
         List<WebElement> desc_elements = driver.findElements(desc_buttons);
         for (WebElement desc : desc_elements) {
@@ -59,26 +66,44 @@ public class DefectPage {
         }
         System.out.println("Тест 4");
         driver.findElement(labels).sendKeys(label);
+        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
         System.out.println("Тест 5");
-        driver.findElement(environment).sendKeys(environment_desc);
+        By environment = By.xpath("//div[@field-id='environment']//iframe");
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+        //WebElement button_env = driver.findElement(environment);
+        //System.out.println(button_env.getAttribute("outerHTML"));
+
+        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(300));
+
+        WebElement iframe2 = wait.until(ExpectedConditions.presenceOfElementLocated(environment));
+        driver.switchTo().frame(iframe2);
+
+        WebElement body2 = wait.until(ExpectedConditions.presenceOfElementLocated(By.tagName("body")));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].innerHTML = arguments[1];", body2, environment);
+
+        driver.switchTo().defaultContent();
+
+
 
         System.out.println("Тест 6");
         //By priority = By.xpath("//option[@value=" + prior + "]");
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.findElement(priority).click();
-        Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        //Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(2));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//option[@value=" + prior + "]"))).click();
         WebElement dropdownElement = driver.findElement(By.xpath("//option[@value=" + prior + "]"));
-        Select select = new Select(dropdownElement);
+        //Select select = new Select(dropdownElement);
 
         // ДОПИШИ ТУТ!
 
-        select.selectByIndex(prior+1);
+        System.out.println(dropdownElement.getAttribute("outerHTML"));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         //driver.findElement().click();
 
         System.out.println("Тест 7");
-        By severity = new ByChained(By.id("customfield_10400"), By.xpath("//option[contains(text(), 'S'" + sever + "']"));
+        By severity = new ByChained(By.id("customfield_10400"), By.xpath("//option[contains(text(), 'S" + sever + "']"));
         driver.findElement(severity).click();
 
         System.out.println("Тест 8");

@@ -103,9 +103,10 @@ public class ExampleTests extends BaseTest {
         assertTrue(dashboard.isProjectOpened());
 
         int before = project.getIssuesCount();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         System.out.println("Количество задач до добавления: " + before);
         project.createIssue("Test");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         int after = project.getIssuesCount();
         System.out.println("Количество задач после добавления: " + after);
         assertEquals(before + 1, after);
@@ -116,8 +117,10 @@ public class ExampleTests extends BaseTest {
         assertEquals("Version 2.0", issuePage.getFixVersion());
 
         dashboard.openProject();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         assertTrue(dashboard.isProjectOpened());
         int before_2 = project.getIssuesCount();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         defectPage.createDefect(
                 "test_def",
                 "Ошибка в тесте",
@@ -125,7 +128,7 @@ public class ExampleTests extends BaseTest {
                 3,
                 0,
                 "Windows 11");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         int after_2 = project.getIssuesCount();
         assertEquals(before_2 + 1, after_2);
     }
