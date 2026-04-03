@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ee681d35-bd51-4d1b-9225-92950c7a175f" name="Changes" comment="init commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PageTests/DashboardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageTests/DashboardPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/PageTests/DefectPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageTests/DefectPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PageTests/IssuePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageTests/IssuePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PageTests/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageTests/LoginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/PageTests/ProjectPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageTests/ProjectPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/ExampleTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ExampleTests.java" afterDir="false" />
     </list>
@@ -36,12 +39,12 @@
     &quot;assignee&quot;: &quot;DukeNukem4ever&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/DukeNukem4ever/IF_HW_Orekhov&quot;,
-    &quot;accountId&quot;: &quot;01303043-c680-476c-af93-7ad2a67d1122&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/DukeNukem4ever/IF_HW_Orekhov/",
+    "accountId": "0584aff9-6cc5-48b8-bc99-707e921e3487"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/Main.java" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -63,40 +66,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.ExampleTests.executor": "Run",
-    "JUnit.ExampleTests.testDefectFields.executor": "Run",
-    "JUnit.ExampleTests.testIssueCounter.executor": "Debug",
-    "JUnit.ExampleTests.testLogin.executor": "Debug",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "IF__HW3",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "C:/Users/artem/IdeaProjects/IF_HW_Orekhov/src/test/java",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "onboarding.tips.debug.path": "C:/Users/artem/IdeaProjects/IF_HW_Orekhov/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.ExampleTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ExampleTests.testDefectFields.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ExampleTests.testIssueCounter.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.ExampleTests.testLogin.executor&quot;: &quot;Debug&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;IF__HW3&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/artem/IdeaProjects/IF_HW_Orekhov/src/test/java&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/artem/IdeaProjects/IF_HW_Orekhov/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="JUnit.ExampleTests.testDefectFields">
+}</component>
+  <component name="RunManager">
     <configuration name="ExampleTests.testDefectFields" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IF_HW_Orekhov" />
       <extension name="coverage">
@@ -136,6 +140,14 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.32098.37" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.32098.37" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -149,6 +161,7 @@
       <workItem from="1774768928798" duration="253000" />
       <workItem from="1774769191199" duration="276000" />
       <workItem from="1774769490723" duration="4189000" />
+      <workItem from="1775194304648" duration="20656000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <option name="closed" value="true" />

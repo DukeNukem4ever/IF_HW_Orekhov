@@ -30,7 +30,7 @@ public class ProjectPage {
         driver.findElement(createSubmit).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
         driver.navigate().refresh();
-        driver.navigate().refresh();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
     }
 }

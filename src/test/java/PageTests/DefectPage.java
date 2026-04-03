@@ -17,26 +17,17 @@ public class DefectPage {
     By summary = By.xpath("//input[@id=\"summary\"]");
     By desc_buttons = By.xpath("//li[@data-mode='wysiwyg']");
     By labels = new ByChained(By.id("labels-multi-select"), By.id("labels-textarea"));
-    By priority = new ByChained(By.xpath("//input[@id='priority-field']"));
     By createSubmit = By.xpath("//input[@id='create-issue-submit']");
-
-    //By desc_button = By.xpath("//button[@type='button' and @aria-pressed='true']");
 
     public DefectPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    //public int getIssuesCount() {
-    //    String text = driver.findElement(issuesCount).getText();
-    //    String total = text.split("из")[1].trim();
-    //    return Integer.parseInt(total);
-    //}
-
     public void createDefect(String name,
                             String description,
                             String label,
-                            int prior,
-                            int sever,
+                            String prior,
+                            String sever,
                             String environment_desc)
     {
         driver.findElement(createButton).click();
@@ -66,47 +57,35 @@ public class DefectPage {
         }
         System.out.println("Тест 4");
         driver.findElement(labels).sendKeys(label);
-        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         System.out.println("Тест 5");
         By environment = By.xpath("//div[@field-id='environment']//iframe");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
-        //WebElement button_env = driver.findElement(environment);
-        //System.out.println(button_env.getAttribute("outerHTML"));
-
-        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(300));
 
         WebElement iframe2 = wait.until(ExpectedConditions.presenceOfElementLocated(environment));
         driver.switchTo().frame(iframe2);
 
         WebElement body2 = wait.until(ExpectedConditions.presenceOfElementLocated(By.tagName("body")));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].innerHTML = arguments[1];", body2, environment);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].innerHTML = arguments[1];", body2, environment_desc);
 
         driver.switchTo().defaultContent();
 
+        //System.out.println("Тест 6");
 
+        //By priority = By.xpath("//input[@id='priority-field']");
+        //WebElement dropdownElement = wait.until(ExpectedConditions.presenceOfElementLocated(priority));
+        //JavascriptExecutor js = (JavascriptExecutor) driver;
+        //js.executeScript("arguments[0].scrollIntoView(true);", dropdownElement);
+        //Select select = new Select(wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//select[@id='priority']"))));
+        //select.selectByIndex(1);
 
-        System.out.println("Тест 6");
-        //By priority = By.xpath("//option[@value=" + prior + "]");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-        driver.findElement(priority).click();
-        //Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(2));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//option[@value=" + prior + "]"))).click();
-        WebElement dropdownElement = driver.findElement(By.xpath("//option[@value=" + prior + "]"));
-        //Select select = new Select(dropdownElement);
+        //System.out.println("Тест 7");
 
-        // ДОПИШИ ТУТ!
+        //WebElement dropdownElement2 = driver.findElement(By.xpath("//select[@id='customfield_10400']"));
+        //Select select2 = new Select(dropdownElement2);
+        //select2.selectByValue(1010 + sever);
 
-        System.out.println(dropdownElement.getAttribute("outerHTML"));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        //driver.findElement().click();
-
-        System.out.println("Тест 7");
-        By severity = new ByChained(By.id("customfield_10400"), By.xpath("//option[contains(text(), 'S" + sever + "']"));
-        driver.findElement(severity).click();
-
-        System.out.println("Тест 8");
+        //System.out.println("Тест 8");
         driver.findElement(createSubmit).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.navigate().refresh();

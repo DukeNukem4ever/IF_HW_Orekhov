@@ -27,7 +27,6 @@ public class LoginPage {
     }
 
     public boolean isLoggedIn() {
-        //return !driver.findElements(By.xpath("//img[contains(@alt,'avatar')]")).isEmpty();
         return !driver.findElements(By.xpath("//a[contains(@id, 'header-details-user-fullname')]")).isEmpty();
     }
 }

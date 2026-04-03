@@ -19,7 +19,6 @@ public class IssuePage {
     public void openIssue(String issueName) {
         driver.findElement(searcher).sendKeys(issueName);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        //driver.findElements(By.xpath("//li[@class='quick-search-result-item']"));
         driver.findElement(By.xpath("//li[@original-title='" + issueName + "']")).click();
     }
 

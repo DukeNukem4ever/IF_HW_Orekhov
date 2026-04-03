@@ -13,16 +13,17 @@ public class ExampleTests extends BaseTest {
     String USER = "AT4";
     String PASS = "Qwerty123";
 
+    // Проверяем авторизацию
 
     @Test
     void testLogin() {
         LoginPage loginPage = new LoginPage(driver);
-
         loginPage.open();
         loginPage.login(USER, PASS);
         assertTrue(loginPage.isLoggedIn());
     }
 
+    // Проверяем открытие проектов
     @Test
     void testOpenProject() {
         LoginPage loginPage = new LoginPage(driver);
@@ -36,6 +37,7 @@ public class ExampleTests extends BaseTest {
         assertTrue(dashboard.isProjectOpened());
     }
 
+    // Проверяем успешную регистрацию обращения
     @Test
     void testIssueCounter() {
         LoginPage loginPage = new LoginPage(driver);
@@ -59,6 +61,7 @@ public class ExampleTests extends BaseTest {
         assertEquals(before + 1, after);
     }
 
+    // Проверяем TestSeleniumATHomework
     @Test
     void testIssueFields() {
         LoginPage loginPage = new LoginPage(driver);
@@ -87,6 +90,7 @@ public class ExampleTests extends BaseTest {
         assertEquals("Version 2.0", issuePage.getFixVersion());
     }
 
+    // Проверяем заполнение полей теста
     @Test
     void testDefectFields() {
         LoginPage loginPage = new LoginPage(driver);
@@ -103,10 +107,9 @@ public class ExampleTests extends BaseTest {
         assertTrue(dashboard.isProjectOpened());
 
         int before = project.getIssuesCount();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         System.out.println("Количество задач до добавления: " + before);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
         project.createIssue("Test");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         int after = project.getIssuesCount();
         System.out.println("Количество задач после добавления: " + after);
         assertEquals(before + 1, after);
@@ -122,11 +125,11 @@ public class ExampleTests extends BaseTest {
         int before_2 = project.getIssuesCount();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         defectPage.createDefect(
-                "test_def",
+                "Empty Error",
                 "Ошибка в тесте",
                 "Bug Defect",
-                3,
-                0,
+                "2",
+                "0",
                 "Windows 11");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         int after_2 = project.getIssuesCount();
