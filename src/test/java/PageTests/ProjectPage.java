@@ -1,36 +1,39 @@
 package PageTests;
 
-import org.openqa.selenium.*;
+import com.codeborne.selenide.SelenideElement;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.time.Duration;
+import static com.codeborne.selenide.Selenide.*;
 
 public class ProjectPage {
 
-    WebDriver driver;
+    private static final Logger log = LoggerFactory.getLogger(ProjectPage.class);
 
-    By issuesCount = By.xpath("//div[@class='showing']");
-    By createButton = By.xpath("//a[@id='create_link']");
-    By summary = By.xpath("//input[@id=\"summary\"]");
-    By createSubmit = By.xpath("//input[@id='create-issue-submit']");
+    private final SelenideElement projectClick = $x("//a[@id='browse_link']");
+    private final SelenideElement testClick = $x("//a[@id='admin_main_proj_link_lnk']");
+    private final SelenideElement issuesCount = $x("//span[contains(text(),' из ')]");
+    private final SelenideElement createBtn = $x("//a[@id='create_link']");
+    private final SelenideElement summary = $x("//input[@id='summary']");
+    private final SelenideElement submit = $x("//input[@id='create-issue-submit']");
 
-    public ProjectPage(WebDriver driver) {
-        this.driver = driver;
-    }
-
-    public int getIssuesCount() {
-        String text = driver.findElement(issuesCount).getText();
-        String total = text.split("из")[1].trim();
-        return Integer.parseInt(total);
+    public int getCount() {
+        projectClick.click();
+        sleep(500);
+        testClick.click();
+        sleep(500);
+        String text = issuesCount.getText();
+        int count = Integer.parseInt(text.split(" из ")[1].trim());
+        log.info("Количество обращений: {}", count);
+        return count;
     }
 
     public void createIssue(String name) {
-        driver.findElement(createButton).click();
-        driver.findElement(summary).sendKeys(name);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
-        driver.findElement(createSubmit).click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
-        driver.navigate().refresh();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+        createBtn.click();
+        sleep(500);
+        summary.setValue(name);
+        submit.click();
+        sleep(500);
+        log.info("Обращение '{}' успешно создано!", name);
     }
 }
