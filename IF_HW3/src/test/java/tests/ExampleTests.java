@@ -3,136 +3,196 @@ package tests;
 import BaseTest.BaseTest;
 import org.junit.jupiter.api.Test;
 import PageTests.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.time.Duration;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ExampleTests extends BaseTest {
-
-    String USER = "AT4";
-    String PASS = "Qwerty123";
-
-    // Проверяем авторизацию
+    private static final Logger log = LoggerFactory.getLogger(ExampleTests.class);
 
     @Test
-    void testLogin() {
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.open();
-        loginPage.login(USER, PASS);
-        assertTrue(loginPage.isLoggedIn());
+    void test1_login() {
+        log.info("Тест на авторизацию запущен.");
+        LoginPage login = new LoginPage();
+        login.openPage();
+        login.login();
+        login.assertLogin();
+        log.info("Тест на авторизацию успешно пройден.");
     }
 
-    // Проверяем открытие проектов
     @Test
-    void testOpenProject() {
-        LoginPage loginPage = new LoginPage(driver);
-        DashboardPage dashboard = new DashboardPage(driver);
+    void test2_project() {
+        log.info("Тест на переход в проект TEST запущен.");
 
-        loginPage.open();
-        loginPage.login(USER, PASS);
-        assertTrue(loginPage.isLoggedIn());
+        LoginPage login = new LoginPage();
+        DashboardPage dash = new DashboardPage();
 
-        dashboard.openProject();
-        assertTrue(dashboard.isProjectOpened());
+        // Открываем страницу и логинимся
+        login.openPage();
+        login.login();
+
+        // Проверяем, что авторизация успешна
+        login.assertLogin();
+
+        // Открываем проект Test
+        dash.openProject();
+
+        // Проверяем, что проект открылся
+        dash.assertProjectOpened();
+
+        log.info("Тест на переход в проект TEST завершён.");
     }
 
-    // Проверяем успешную регистрацию обращения
     @Test
-    void testIssueCounter() {
-        LoginPage loginPage = new LoginPage(driver);
-        DashboardPage dashboard = new DashboardPage(driver);
-        ProjectPage project = new ProjectPage(driver);
+    void test3_counter() {
+        log.info("Тест на краткую регистрацию бага запущен.");
 
-        loginPage.open();
-        loginPage.login(USER, PASS);
-        assertTrue(loginPage.isLoggedIn());
+        LoginPage login = new LoginPage();
+        DashboardPage dash = new DashboardPage();
+        ProjectPage project = new ProjectPage();
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        dashboard.openProject();
-        assertTrue(dashboard.isProjectOpened());
+        // Открываем страницу и логинимся
+        login.openPage();
+        login.login();
 
-        int before = project.getIssuesCount();
-        System.out.println("Количество задач до добавления: " + before);
-        project.createIssue("Test");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        int after = project.getIssuesCount();
-        System.out.println("Количество задач после добавления: " + after);
-        assertEquals(before + 1, after);
-    }
+        // Проверяем, что авторизация успешна
+        login.assertLogin();
 
-    // Проверяем TestSeleniumATHomework
-    @Test
-    void testIssueFields() {
-        LoginPage loginPage = new LoginPage(driver);
-        DashboardPage dashboard = new DashboardPage(driver);
-        ProjectPage project = new ProjectPage(driver);
-        IssuePage issuePage = new IssuePage(driver);
+        // Открываем проект Test
+        dash.openProject();
 
-        loginPage.open();
-        loginPage.login(USER, PASS);
-        assertTrue(loginPage.isLoggedIn());
+        // Проверяем, что проект открылся
+        dash.assertProjectOpened();
 
-        dashboard.openProject();
-        assertTrue(dashboard.isProjectOpened());
+        // Считаем количество обращений до добавления
+        int before = project.getCount();
 
-        int before = project.getIssuesCount();
-        System.out.println("Количество задач до добавления: " + before);
-        project.createIssue("Test");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        int after = project.getIssuesCount();
-        System.out.println("Количество задач после добавления: " + after);
+        // Добавляем обращение с названием TestIssue123
+        project.createIssue("TestIssue123");
+
+        // Считаем количество обращений после добавления
+        int after = project.getCount();
+
+        // Проверяем, что количество обращений увеличилось на единицу
         assertEquals(before + 1, after);
 
-        issuePage.openIssue("TestSeleniumATHomework");
-
-        assertEquals("сделать", issuePage.getStatus().toLowerCase());
-        assertEquals("Version 2.0", issuePage.getFixVersion());
+        log.info("Тест на краткую регистрацию бага завершён.");
     }
 
-    // Проверяем заполнение полей теста
     @Test
-    void testDefectFields() {
-        LoginPage loginPage = new LoginPage(driver);
-        DashboardPage dashboard = new DashboardPage(driver);
-        ProjectPage project = new ProjectPage(driver);
-        IssuePage issuePage = new IssuePage(driver);
-        DefectPage defectPage = new DefectPage(driver);
+    void test4_issue() {
+        log.info("Тест на проверку характеристик обращения TestIssue123 запущен.");
 
-        loginPage.open();
-        loginPage.login(USER, PASS);
-        assertTrue(loginPage.isLoggedIn());
+        LoginPage login = new LoginPage();
+        DashboardPage dash = new DashboardPage();
+        IssuePage issue = new IssuePage();
+        ProjectPage project = new ProjectPage();
 
-        dashboard.openProject();
-        assertTrue(dashboard.isProjectOpened());
+        // Открываем страницу и логинимся
+        login.openPage();
+        login.login();
 
-        int before = project.getIssuesCount();
-        System.out.println("Количество задач до добавления: " + before);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
-        project.createIssue("Test");
-        int after = project.getIssuesCount();
-        System.out.println("Количество задач после добавления: " + after);
+        // Проверяем, что авторизация успешна
+        login.assertLogin();
+
+        // Открываем проект Test
+        dash.openProject();
+
+        // Проверяем, что проект открылся
+        dash.assertProjectOpened();
+
+        // Считаем количество обращений до добавления
+        int before = project.getCount();
+
+        // Добавляем обращение с названием TestIssue123
+        project.createIssue("TestIssue123");
+
+        // Считаем количество обращений после добавления
+        int after = project.getCount();
+
+        // Проверяем, что количество обращений увеличилось на единицу
         assertEquals(before + 1, after);
 
-        issuePage.openIssue("TestSeleniumATHomework");
+        // Ищем и открываем обращение TestSeleniumATHomework
+        issue.openIssue();
 
-        assertEquals("сделать", issuePage.getStatus().toLowerCase());
-        assertEquals("Version 2.0", issuePage.getFixVersion());
+        // Проверяем, что статус поставлен на "Сделать"
+        issue.assertStatus();
 
-        dashboard.openProject();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-        assertTrue(dashboard.isProjectOpened());
-        int before_2 = project.getIssuesCount();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-        defectPage.createDefect(
-                "Empty Error",
-                "Ошибка в тесте",
-                "Bug Defect",
-                "2",
-                "0",
-                "Windows 11");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-        int after_2 = project.getIssuesCount();
-        assertEquals(before_2 + 1, after_2);
+        // Проверяем, что версия 2.0
+        issue.assertVersion();
+
+        log.info("Тест на проверку характеристик обращения TestIssue123 завершён.");
+    }
+
+    @Test
+    void test5_full() {
+        log.info("Тест на полную регистрацию бага запущен.");
+
+        LoginPage login = new LoginPage();
+        DashboardPage dash = new DashboardPage();
+        IssuePage issue = new IssuePage();
+        ProjectPage project = new ProjectPage();
+        FullIssuePage fullIssue = new FullIssuePage();
+
+        // Открываем страницу и логинимся
+        login.openPage();
+        login.login();
+
+        // Проверяем, что авторизация успешна
+        login.assertLogin();
+
+        // Открываем проект Test
+        dash.openProject();
+
+        // Проверяем, что проект открылся
+        dash.assertProjectOpened();
+
+        // Считаем количество обращений до добавления
+        int before = project.getCount();
+
+        // Добавляем обращение с названием TestIssue123
+        project.createIssue("TestIssue123");
+
+        // Считаем количество обращений после добавления
+        int after = project.getCount();
+
+        // Проверяем, что количество обращений увеличилось на единицу
+        assertEquals(before + 1, after);
+
+        // Ищем и открываем обращение TestSeleniumATHomework
+        issue.openIssue();
+
+        // Проверяем, что статус поставлен на "Сделать"
+        issue.assertStatus();
+
+        // Проверяем, что версия 2.0
+        issue.assertVersion();
+
+        // Снова открываем проект Test
+        dash.openProject();
+
+        // Проверяем, что проект открылся
+        dash.assertProjectOpened();
+
+        // Считаем количество обращений до добавления
+        int before2 = project.getCount();
+
+        // Фиксируем баг с более полными характеристиками
+        fullIssue.createIssue("TestIssue456",
+                "Новый баг, который необходимо исправить как можно скорее.",
+                "Bug, Error, Fix",
+                "Windows 11",
+                3,
+                0);
+
+        // Считаем количество обращений до добавления
+        int after2 = project.getCount();
+
+        // Проверяем, что количество обращений увеличилось на единицу
+        assertEquals(before2 + 1, after2);
+
+        log.info("Тест на полную регистрацию бага завершён.");
     }
 }

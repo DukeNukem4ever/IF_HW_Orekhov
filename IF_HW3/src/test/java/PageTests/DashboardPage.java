@@ -1,24 +1,23 @@
 package PageTests;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.codeborne.selenide.SelenideElement;
 
-import org.openqa.selenium.*;
+import static com.codeborne.selenide.Selenide.*;
 
 public class DashboardPage {
-
-    WebDriver driver;
-
-    By projectsMenu = By.xpath("//a[contains(@id, 'browse_link')]");
-    By testProject = By.xpath("//a[contains(text(),'Test (TEST)')]");
-
-    public DashboardPage(WebDriver driver) {
-        this.driver = driver;
-    }
+    private static final Logger log = LoggerFactory.getLogger(DashboardPage.class);
+    private final SelenideElement projects = $x("//a[@id='browse_link']");
+    private final SelenideElement testProject = $x("//a[contains(@href,'Test')]");
 
     public void openProject() {
-        driver.findElement(projectsMenu).click();
-        driver.findElement(testProject).click();
+        projects.click();
+        log.info("Открыто выпадающее меню проектов.");
+        testProject.click();
+        log.info("Выбран проект Test.");
     }
 
-    public boolean isProjectOpened() {
-        return driver.getCurrentUrl().contains("TEST");
+    public void assertProjectOpened() {
+        webdriver().shouldHave(com.codeborne.selenide.WebDriverConditions.urlContaining("Test"));
     }
 }

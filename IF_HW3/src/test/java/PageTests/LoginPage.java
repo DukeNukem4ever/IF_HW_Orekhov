@@ -1,32 +1,34 @@
 package PageTests;
-import org.openqa.selenium.*;
-import org.openqa.selenium.WebDriver;
-import java.time.Duration;
+import com.codeborne.selenide.SelenideElement;
+import Config.TestConfig;
+import static com.codeborne.selenide.Selenide.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class LoginPage {
 
-    WebDriver driver;
+    private static final Logger log = LoggerFactory.getLogger(LoginPage.class);
+    private final SelenideElement username = $x("//input[@name='os_username']");
+    private final SelenideElement password = $x("//input[@name='os_password']");
+    private final SelenideElement loginBtn = $x("//input[@name='login']");
+    private final SelenideElement dashboard = $x("//a[@id='browse_link']");
 
-    By username = By.xpath("//input[@id='login-form-username']");
-    By password = By.xpath("//input[@id='login-form-password']");
-    By loginButton = By.xpath("//input[@value='Войти']");
-
-    public LoginPage(WebDriver driver) {
-        this.driver = driver;
+    public void openPage() {
+        open(TestConfig.BASE_URL + "/login.jsp");
     }
 
-    public void open() {
-        driver.get("https://edujira.ifellow.ru");
+    public void login() {
+        username.setValue(TestConfig.LOGIN);
+        log.info("Введён логин пользователя: {}.", TestConfig.LOGIN);
+        sleep(500);
+        password.setValue(TestConfig.PASSWORD);
+        log.info("Введён пароль пользователя: {}.", TestConfig.PASSWORD);
+        sleep(500);
+        loginBtn.click();
+        log.info("Авторизация прошла успешно.");
     }
 
-    public void login(String user, String pass) {
-        driver.findElement(username).sendKeys(user);
-        driver.findElement(password).sendKeys(pass);
-        driver.findElement(loginButton).click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-    }
-
-    public boolean isLoggedIn() {
-        return !driver.findElements(By.xpath("//a[contains(@id, 'header-details-user-fullname')]")).isEmpty();
+    public void assertLogin() {
+        dashboard.shouldBe(com.codeborne.selenide.Condition.visible);
     }
 }

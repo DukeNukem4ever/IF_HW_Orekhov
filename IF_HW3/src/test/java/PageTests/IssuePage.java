@@ -1,32 +1,35 @@
 package PageTests;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import com.codeborne.selenide.SelenideElement;
 
-import org.openqa.selenium.*;
-
-import java.time.Duration;
+import static com.codeborne.selenide.Selenide.*;
 
 public class IssuePage {
 
-    WebDriver driver;
+    private static final Logger log = LoggerFactory.getLogger(IssuePage.class);
+    private final SelenideElement searcher = $x("//input[@id='quickSearchInput']");
+    private final SelenideElement issue = $x("//span[contains(text(),'TestSeleniumATHomework')]");
+    private final SelenideElement status = $x("//span[contains(text(),'Сделать')]");
+    private final SelenideElement version = $x("//a[contains(text(),'Version 2.0')]");
 
-    By status = By.xpath("//span[contains(text(),'Сделать')]");
-    By fixVersion = By.xpath("//a[@title='Version 2.0 ']");
-    By searcher = By.xpath("//input[@id='quickSearchInput']");
+    public void openIssue() {
 
-    public IssuePage(WebDriver driver) {
-        this.driver = driver;
+        searcher.click();
+        log.info("Открыто поисковое поле.");
+        searcher.setValue("TestSeleniumATHomework");
+        log.info("В поисковое поле введено значение TestSeleniumATHomework.");
+        sleep(500);
+        issue.click();
+        log.info("Обращение TestSeleniumATHomework открыто.");
+        sleep(500);
     }
 
-    public void openIssue(String issueName) {
-        driver.findElement(searcher).sendKeys(issueName);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.findElement(By.xpath("//li[@original-title='" + issueName + "']")).click();
+    public void assertStatus() {
+        status.shouldBe(com.codeborne.selenide.Condition.visible);
     }
 
-    public String getStatus() {
-        return driver.findElement(status).getText();
-    }
-
-    public String getFixVersion() {
-        return driver.findElement(fixVersion).getText();
+    public void assertVersion() {
+        version.shouldBe(com.codeborne.selenide.Condition.visible);
     }
 }
