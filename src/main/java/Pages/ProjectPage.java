@@ -1,4 +1,4 @@
-package PageTests;
+package Pages;
 
 import com.codeborne.selenide.SelenideElement;
 import org.slf4j.Logger;
@@ -19,9 +19,7 @@ public class ProjectPage {
 
     public int getCount() {
         projectClick.click();
-        sleep(500);
         testClick.click();
-        sleep(500);
         String text = issuesCount.getText();
         int count = Integer.parseInt(text.split(" из ")[1].trim());
         log.info("Количество обращений: {}", count);
@@ -30,10 +28,8 @@ public class ProjectPage {
 
     public void createIssue(String name) {
         createBtn.click();
-        sleep(500);
         summary.setValue(name);
         submit.click();
-        sleep(500);
         log.info("Обращение '{}' успешно создано!", name);
     }
 }

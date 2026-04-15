@@ -5,19 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee681d35-bd51-4d1b-9225-92950c7a175f" name="Changes" comment="init commit">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Config/TestConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/PageTests/FullIssuePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/DriverManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Steps/DashboardSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Steps/FullIssuePageSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Steps/LoginPageSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Steps/ProjectPageSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Steps/issuePageSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/hooks/CucumberTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/hooks/Hooks.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/dashboard.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/fullissuepage.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/issue.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/login.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/project.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IF_HW3/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IF_HW3/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IF_HW3/src/test/java/BaseTest/BaseTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IF_HW3/src/test/java/PageTests/DashboardPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IF_HW3/src/test/java/PageTests/DefectPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IF_HW3/src/test/java/PageTests/IssuePage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IF_HW3/src/test/java/PageTests/LoginPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IF_HW3/src/test/java/PageTests/ProjectPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IF_HW3/src/test/java/tests/ExampleTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IF_HW3/target/test-classes/BaseTest/BaseTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IF_HW3/target/test-classes/PageTests/DashboardPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IF_HW3/target/test-classes/PageTests/DefectPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IF_HW3/target/test-classes/PageTests/IssuePage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IF_HW3/target/test-classes/PageTests/LoginPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IF_HW3/target/test-classes/PageTests/ProjectPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IF_HW3/target/test-classes/tests/ExampleTests.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/BaseTest/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BaseTest/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageTests/DashboardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageTests/DashboardPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageTests/DefectPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageTests/IssuePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageTests/IssuePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageTests/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageTests/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PageTests/ProjectPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PageTests/ProjectPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Config/TestConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Config/TestConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PageTests/DashboardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/DashboardPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PageTests/FullIssuePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/FullIssuePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PageTests/IssuePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/IssuePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PageTests/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PageTests/ProjectPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/ProjectPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/ExampleTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ExampleTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/DriverManager.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,136 +101,70 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JUnit.ExampleTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ExampleTests.test2_project.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ExampleTests.test3_counter.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ExampleTests.test4_issue.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ExampleTests.test5_full.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ExampleTests.testDefectFields.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ExampleTests.testIssueCounter.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ExampleTests.testLogin.executor&quot;: &quot;Debug&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;mastermain&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/artem/IdeaProjects/IF_HW_Orekhov/src/test/java&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/artem/IdeaProjects/IF_HW_Orekhov/src/main/java/org/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Cucumber Java.CucumberProject.executor": "Run",
+    "Cucumber Java.Feature: dashboard.executor": "Run",
+    "Cucumber Java.Feature: fullissuepage.executor": "Run",
+    "Cucumber Java.Feature: issue.executor": "Run",
+    "Cucumber Java.Feature: login.executor": "Run",
+    "Cucumber Java.Feature: projectpage.executor": "Run",
+    "Cucumber Java.ProjectPageFeature.executor": "Debug",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.ExampleTests.executor": "Run",
+    "JUnit.ExampleTests.test2_project.executor": "Debug",
+    "JUnit.ExampleTests.test3_counter.executor": "Run",
+    "JUnit.ExampleTests.test4_issue.executor": "Run",
+    "JUnit.ExampleTests.test5_full.executor": "Run",
+    "JUnit.ExampleTests.testDefectFields.executor": "Run",
+    "JUnit.ExampleTests.testIssueCounter.executor": "Run",
+    "JUnit.ExampleTests.testLogin.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "IF__HW4",
+    "go.import.settings.migrated": "true",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/Users/artem/IdeaProjects/IF_HW_Orekhov/src/main/java",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/artem/IdeaProjects/IF_HW_Orekhov/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2954023",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Artem\IdeaProjects\IF_HW_Orekhov\src\main\java" />
+      <recent name="C:\Users\Artem\IdeaProjects\IF_HW_Orekhov\src\main" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="ExampleTests.test2_project" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CucumberProject" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <option name="FILE_PATH" value="C:\Users\Artem\IdeaProjects\IF_HW_Orekhov" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="IF_HW_Orekhov" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.ExampleTests" />
-      <option name="METHOD_NAME" value="test2_project" />
-      <option name="TEST_OBJECT" value="method" />
+      <shortenClasspath name="NONE" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <method v="2">
-        <option name="Make" enabled="true" />
+        <option name="MakeProject" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ExampleTests.test3_counter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="IF_HW_Orekhov" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.ExampleTests" />
-      <option name="METHOD_NAME" value="test3_counter" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ExampleTests.test4_issue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="IF_HW_Orekhov" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.ExampleTests" />
-      <option name="METHOD_NAME" value="test4_issue" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ExampleTests.test5_full" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="IF_HW_Orekhov" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.ExampleTests" />
-      <option name="METHOD_NAME" value="test5_full" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ExampleTests.testDefectFields" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="IF_HW_Orekhov" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.ExampleTests" />
-      <option name="METHOD_NAME" value="testDefectFields" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.ExampleTests.test3_counter" />
-        <item itemvalue="JUnit.ExampleTests.test2_project" />
-        <item itemvalue="JUnit.ExampleTests.test4_issue" />
-        <item itemvalue="JUnit.ExampleTests.test5_full" />
-        <item itemvalue="JUnit.ExampleTests.testDefectFields" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>

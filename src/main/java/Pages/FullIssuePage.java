@@ -1,4 +1,4 @@
-package PageTests;
+package Pages;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.codeborne.selenide.ElementsCollection;
@@ -7,37 +7,24 @@ import java.util.Objects;
 import static com.codeborne.selenide.Selenide.*;
 
 public class FullIssuePage {
-
-    // Открытие логгера
-    private static final Logger log = LoggerFactory.getLogger(ProjectPage.class);
-
-    // Открытие формы
+    private static final Logger log = LoggerFactory.getLogger(FullIssuePage.class);
+    
     private final SelenideElement createBtn = $x("//a[@id='create_link']");
-
-    // Заголовок
+    
     private final SelenideElement summary = $x("//input[@id='summary']");
 
-    // Проверка на формат текста в полях описания и окружающей среды
     private final ElementsCollection fields = $$x("//button[contains(text(), 'Визуальный')]");
 
-    // Теги
     private final SelenideElement tags_sel = $x("//textarea[@id='labels-textarea']");
 
-    // Поле с приоритетом
     private final SelenideElement priority_sel = $x("//div[@id='priority-single-select']");
-    // Высочайший приоритет
     private final SelenideElement priority_highest = $x("//li[contains(@id,'highest-')]");
-    // Высокий приоритет
     private final SelenideElement priority_high = $x("//li[contains(@id,'high-')]");
-    // Низкий приоритет
     private final SelenideElement priority_low = $x("//li[contains(@id,'low-')]");
-    // Нижайший приоритет
     private final SelenideElement priority_lowest = $x("//li[contains(@id,'lowest-')]");
 
-    // Серьёзность
     private final SelenideElement severity_sel = $x("//select[@id='customfield_10400']");
 
-    // Отправка
     private final SelenideElement submit = $x("//input[@id='create-issue-submit']");
 
     public void createIssue(String name,

@@ -1,4 +1,4 @@
-package PageTests;
+package Pages;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.codeborne.selenide.SelenideElement;

@@ -1,10 +1,11 @@
 package tests;
 
 import BaseTest.BaseTest;
+import Pages.*;
 import org.junit.jupiter.api.Test;
-import PageTests.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import Config.TestConfig;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -12,11 +13,23 @@ public class ExampleTests extends BaseTest {
     private static final Logger log = LoggerFactory.getLogger(ExampleTests.class);
 
     @Test
-    void test1_login() {
-        log.info("Тест на авторизацию запущен.");
+    void test0_login_invalid() {
+        log.info("Тест на невалидную авторизацию запущен.");
         LoginPage login = new LoginPage();
         login.openPage();
-        login.login();
+        login.login("Abcdef",
+                "Password");
+        login.assertLoginInvalid();
+        log.info("Тест на невалидную авторизацию успешно пройден.");
+    }
+
+    @Test
+    void test1_login() {
+        log.info("Тест на валидную авторизацию запущен.");
+        LoginPage login = new LoginPage();
+        login.openPage();
+        login.login(TestConfig.LOGIN,
+                    TestConfig.PASSWORD);
         login.assertLogin();
         log.info("Тест на авторизацию успешно пройден.");
     }
@@ -30,7 +43,8 @@ public class ExampleTests extends BaseTest {
 
         // Открываем страницу и логинимся
         login.openPage();
-        login.login();
+        login.login(TestConfig.LOGIN,
+                    TestConfig.PASSWORD);
 
         // Проверяем, что авторизация успешна
         login.assertLogin();
@@ -54,7 +68,8 @@ public class ExampleTests extends BaseTest {
 
         // Открываем страницу и логинимся
         login.openPage();
-        login.login();
+        login.login(TestConfig.LOGIN,
+                    TestConfig.PASSWORD);
 
         // Проверяем, что авторизация успешна
         login.assertLogin();
@@ -91,7 +106,8 @@ public class ExampleTests extends BaseTest {
 
         // Открываем страницу и логинимся
         login.openPage();
-        login.login();
+        login.login(TestConfig.LOGIN,
+                    TestConfig.PASSWORD);
 
         // Проверяем, что авторизация успешна
         login.assertLogin();
@@ -138,7 +154,8 @@ public class ExampleTests extends BaseTest {
 
         // Открываем страницу и логинимся
         login.openPage();
-        login.login();
+        login.login(TestConfig.LOGIN,
+                    TestConfig.PASSWORD);
 
         // Проверяем, что авторизация успешна
         login.assertLogin();
