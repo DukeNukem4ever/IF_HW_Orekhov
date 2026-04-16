@@ -32,14 +32,4 @@ public class Hooks {
         WebDriverRunner.getWebDriver().manage().window().maximize();
         log.info("Браузер открыт!");
     }
-
-    @Before("@test1")
-    public static void BeforeLoginValid() {
-        log.info("Тестируем авторизацию с валидными данными.");
-    }
-
-    @Before("@test2")
-    public static void BeforeLoginInvalid() {
-        log.info("Тестируем авторизацию с невалидными данными.");
-    }
 }
