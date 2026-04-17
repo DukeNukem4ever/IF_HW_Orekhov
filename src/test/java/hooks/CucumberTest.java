@@ -10,12 +10,10 @@ import static io.cucumber.core.options.Constants.PLUGIN_PROPERTY_NAME;
 @IncludeEngines("cucumber")
 @SelectClasspathResource("features")
 @ConfigurationParameter(key=PLUGIN_PROPERTY_NAME, value="pretty")
-@ConfigurationParameter(key=GLUE_PROPERTY_NAME, value="steps")
+@ConfigurationParameter(key=GLUE_PROPERTY_NAME, value="Steps")
 @ConfigurationParameter(key= Constants.EXECUTION_DRY_RUN_PROPERTY_NAME, value="false")
-@ConfigurationParameter(key=Constants.FILTER_NAME_PROPERTY_NAME, value = ".*тест")
 
 
 public class CucumberTest
 {
-
 }
